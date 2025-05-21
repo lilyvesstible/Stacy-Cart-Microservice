@@ -5,9 +5,11 @@ def AddItem(data, itemList):
     return itemList
 
 def DeleteItem(data, itemList):
+    print("STARTINGGG")
     for i in range(int(data[1])):
-        if data[1] in itemList:
-            itemList.remove(data[1])
+        if data[0] in itemList:
+            print("One of oweghweiofhwf")
+            itemList.remove(data[0])
         else:
             break
     return itemList
@@ -48,10 +50,6 @@ def OpChoose(data, op, itemList):
 #Decodes message from a string
 def DecodeMessage(message, itemList):
     decode = message.split(", ")
-    #Checks if all items in a list are ints 
-    #FIXFICIFJDIFJSOIHSIODFOIHEFHUWh
-    if not all(isinstance(item, int) for item in decode):
-        return (itemList, "[INVALID MESSAGE]")
     #Checks if message is correct
     if len(decode) == 3:
         data = (int(decode[0]), int(decode[1]))
