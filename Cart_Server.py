@@ -14,7 +14,9 @@ while True:
     print(f"Received request from the client: {message.decode()}")
     if len(message) > 0:
         #result is a tuple, (Updated List, String To Print)
-        result = DecodeMessage(message, cartList)
+        result = DecodeMessage(message.decode(), cartList)
+        if result[1] == "[QUIT]":
+            break
         cartList = result[0]
         time.sleep(3)
         socket.send_string(result[1])

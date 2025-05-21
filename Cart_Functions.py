@@ -37,6 +37,9 @@ def OpChoose(data, op, itemList):
     #Concatenates list into string
     elif op == 3:
         return (itemList, PrintList(itemList))
+    #Quit Server
+    elif op == 4:
+        return (itemList, "[QUIT]")
     #Error Handling
     else:
         return (itemList, "[UNKNOWN OPERATION]")
