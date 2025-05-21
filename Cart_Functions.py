@@ -12,7 +12,18 @@ def DeleteItem(data, itemList):
             break
     return itemList
 
-#Returns a tuple, (New List, string to be sent)
+def PrintList(itemList):
+    textSent = ""
+    first = True
+    for i in itemList:
+        if not first:
+            textSent += (", " + i)
+        else:
+            first = False
+    return textSent
+
+#Input: operation type (int), data (tuple (Serial ID, Quantity)), Item List (list)
+#Output: Tuple (New List, string to be sent)
 def OpChoose(op, data, itemList):
     #Add Item
     if op == 0:
@@ -23,3 +34,9 @@ def OpChoose(op, data, itemList):
     #Clear List
     elif op == 2:
         return ([], "[LIST CLEARED]")
+    #Concatenates list into string
+    elif op == 3:
+        return (itemList, PrintList(itemList))
+    #Error Handling
+    else:
+        return (itemList, "[UNKNOWN OPERATION]")
