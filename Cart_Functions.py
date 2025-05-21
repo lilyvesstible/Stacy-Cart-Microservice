@@ -16,9 +16,10 @@ def PrintList(itemList):
     textSent = ""
     first = True
     for i in itemList:
-        if not first:
-            textSent += (", " + i)
+        if  first == False:
+            textSent += (", " + str(i))
         else:
+            textSent += str(i)
             first = False
     return textSent
 
@@ -47,8 +48,12 @@ def OpChoose(data, op, itemList):
 #Decodes message from a string
 def DecodeMessage(message, itemList):
     decode = message.split(", ")
+    #Checks if all items in a list are ints 
+    #FIXFICIFJDIFJSOIHSIODFOIHEFHUWh
+    if not all(isinstance(item, int) for item in decode):
+        return (itemList, "[INVALID MESSAGE]")
     #Checks if message is correct
-    if decode.length == 3:
+    if len(decode) == 3:
         data = (int(decode[0]), int(decode[1]))
         op = int(decode[2])
         return OpChoose(data, op, itemList)
