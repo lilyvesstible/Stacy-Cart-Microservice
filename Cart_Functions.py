@@ -24,7 +24,7 @@ def PrintList(itemList):
 
 #Input: operation type (int), data (tuple (Serial ID, Quantity)), Item List (list)
 #Output: Tuple (New List, string to be sent)
-def OpChoose(op, data, itemList):
+def OpChoose(data, op, itemList):
     #Add Item
     if op == 0:
         return (AddItem(data, itemList), "[ITEM ADDED]")
@@ -40,3 +40,14 @@ def OpChoose(op, data, itemList):
     #Error Handling
     else:
         return (itemList, "[UNKNOWN OPERATION]")
+    
+#Decodes message from a string
+def DecodeMessage(message, itemList):
+    decode = message.split(", ")
+    #Checks if message is correct
+    if decode.length == 3:
+        data = (int(decode[0]), int(decode[1]))
+        op = int(decode[2])
+        return OpChoose(data, op, itemList)
+    else: 
+        return (itemList, "[INVALID MESSAGE]")
