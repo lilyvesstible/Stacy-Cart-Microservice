@@ -21,3 +21,7 @@ EX: For a list [24, 24, 5], the command "24, 6, 1" would delete 6 items with the
 
 EX: For a list [3, 5, 3, 24], the command "0, 0, 3" would output the string "3, 5, 3, 24". In this scenario, the first and second arguments could be any integer, though I chose 0.
 
+Note! A server can only hold one cart at a time, and once the server is shut down, the cart is also deleted.
+
+UML Diagram:
+./UML-Microservice.drawio.png
