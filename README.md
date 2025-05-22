@@ -23,5 +23,4 @@ EX: For a list [3, 5, 3, 24], the command "0, 0, 3" would output the string "3, 
 
 Note! A server can only hold one cart at a time, and once the server is shut down, the cart is also deleted.
 
-UML Diagram: 
-(./UML-Microservice.drawio.png)
+[UML Diagram](./UML-Microservice.drawio.png)
